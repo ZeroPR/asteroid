@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour { 
 
     public float mov_speed = 35;
+    public int damage = 50;
     Transform trans;
 
     void Start()
@@ -20,7 +21,12 @@ public class BulletScript : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.name); 
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            collision.gameObject.GetComponent<AsteroidScript>().TakeDamage(damage);
+            Destroy(this.gameObject);
+
+        }
     }
 
     IEnumerator SelfDestroy()

@@ -116,7 +116,9 @@ MonoBehaviour:
   max_health: 100
   health: 100
   mov_speed: 0
+  canvas: {fileID: 6155048016530641396}
   healthbar: {fileID: 6155048015313422283}
+  dissolve_material: {fileID: 2100000, guid: 49320d89b48058d43aec554c722a47c2, type: 2}
 --- !u!50 &6155048014913521315
 Rigidbody2D:
   serializedVersion: 4
